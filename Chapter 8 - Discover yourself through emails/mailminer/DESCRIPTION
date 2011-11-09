@@ -1,0 +1,10 @@
+Package: mailminer
+Type: Package
+Title: MailMiner
+Version: 1.0
+Date: 2011-09-19
+Author: Chang Sau Sheong
+Maintainer: Chang Sau Sheong <sausheong@gmail.com>
+Description: Helper functions for the MailMiner utility, a set of scripts for mining your emails, first used for chapter 6 in Everyday Programming
+License: GPL
+LazyLoad: yes
