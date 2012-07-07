@@ -5,7 +5,7 @@ pdf("ch04_ex5_2.pdf")
 data <- read.table("simulation3.csv", header=TRUE, sep=",")
 df <- data.frame(table(data$X400))
 colnames(df) <- c("queue_size", "frequency")
-percent_labels <- paste(df$frequency, '(', round(df$frequency*100/540, 2), '%)')
+percent_labels <- paste(df$frequency, '\n', round(df$frequency*100/540, 2), '%')
 
 ggplot(data=df) + opts(legend.position = "none") + 
   geom_bar(aes(x = queue_size, y = frequency, fill = factor(queue_size))) +

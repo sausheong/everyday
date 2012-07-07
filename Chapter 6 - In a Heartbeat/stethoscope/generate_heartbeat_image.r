@@ -1,0 +1,5 @@
+png("heartbeat.png")
+wav_data <- read.csv(file='heartbeat.csv', header=TRUE)
+plot(wav_data$ch1, type='n', main='Channel 1 + Channel 2', xlab='Time', ylab='Frequency')
+lines(wav_data$ch1)
+dev.off()
