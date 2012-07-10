@@ -18,6 +18,7 @@ class Restroom
       unoccupied_facility.occupy person
     else
       @queue << person
+      Person.population.delete person
     end
   end
 
