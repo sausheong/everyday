@@ -7,7 +7,7 @@ median <- apply(data,2,median)
 max  <- apply(data,2,max)
 df <- data.frame(population=seq(from=10,to=600,by=10),mean=mean, median=median,max=max)
 
-ggplot(data = df) + scale_shape_manual(name="Type", value=c(2,3,4)) + 
+ggplot(data = df) + scale_shape_manual(name="Type", values=c(2,3,4)) + 
   geom_smooth(aes(x = population, y = mean)) +
   geom_point(aes(x  = population, y = mean, shape = "mean")) +
   geom_smooth(aes(x = population, y = median)) +
