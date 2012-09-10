@@ -2,7 +2,7 @@ library(ggplot2)
 
 pdf("figure3-2.pdf")
 data <- read.table("simulation1.csv", header=TRUE, sep=",")
-mean <- mean(data)
+mean <- colMeans(data)
 median <- apply(data,2,median)
 max  <- apply(data,2,max)
 df <- data.frame(population=seq(from=10,to=600,by=10),mean=mean, median=median,max=max)
