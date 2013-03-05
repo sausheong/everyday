@@ -1,8 +1,7 @@
 library(ggplot2)
 
-pdf("figure3-5.pdf")
 data <- read.table("simulation2.csv", header = TRUE, sep = ",")
-mean <- mean(data)
+mean <- colMeans(data)
 median <- apply(data, 2, median)
 max  <- apply(data, 2, max)
 df <- data.frame(population = seq(from = 1, to = 30), mean = mean, median = median, max = max)
@@ -17,4 +16,5 @@ ggplot(data  =  df) + scale_shape_manual(name = "Type", values=c(2,3,4)) +
   scale_y_continuous("queue size") +
   scale_x_continuous("number of facilities in a restroom")
   
+ggsave("figure3-5.pdf")
 print(df)
