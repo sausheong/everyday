@@ -18,12 +18,12 @@ population_range.step(10).each do |population_size|
   # iterate over a period
   DURATION.times do |t|
     data[population_size] << restroom.queue.size # we want the queue size
-    queue = restroom.queue.clone # clone the queue so that we don't mess up the live one
-    restroom.queue.clear # clear the queue
+    queue = restroom.queue.clone # create a temporary queue so that we can sort people between the facilities and the restroom queue for this "tick"
+    restroom.queue.clear # clear the queue to prepare for the sorting
     
-    # let everyone from the queue enter the restroom first
+    # take each person from the temporary queue and try adding them to a facility
     until queue.empty? 
-      restroom.enter queue.shift # de-queue the first person in line and move him to the restroom
+      restroom.enter queue.shift # de-queue the person at the front of the line, place in an unoccupied facility or, if none, back to the restroom queue
     end
     
 
