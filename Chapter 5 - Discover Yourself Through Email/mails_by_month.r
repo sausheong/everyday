@@ -11,7 +11,7 @@ sent_count <- dates_count(dates=sent_data['date'], element='%b')
 month_names <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 df <- data.frame(mths=factor(month_names, levels=month_names),inbox=inbox_count,sent=sent_count)
 
-ggplot(data=df) + scale_shape_manual(name="Mailbox", value=c(2,3)) +
+ggplot(data=df) + scale_shape_manual(name="Mailbox", values=c(2,3)) +
   geom_point(aes(x=mths,y=inbox, shape='inbox')) +
   geom_smooth(aes(x=mths,y=inbox, group=1)) +
   geom_point(aes(x=mths,y=sent, shape='sent')) +

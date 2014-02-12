@@ -13,7 +13,7 @@ days_of_month <- c("01","02","03","04","05","06","07","08","09","10",
                    "21","22","23","24","25","26","27","28","29","30","31")
 df <- data.frame(days=factor(days_of_month, levels=days_of_month),inbox=inbox_count,sent=sent_count)
 
-ggplot(data=df) + scale_shape_manual(name="Mailbox", value=c(2,3)) +
+ggplot(data=df) + scale_shape_manual(name="Mailbox", values=c(2,3)) +
   geom_point(aes(x=days,y=inbox, shape='inbox')) +
   geom_smooth(aes(x=days,y=inbox, group=1)) +
   geom_point(aes(x=days,y=sent, shape='sent')) +

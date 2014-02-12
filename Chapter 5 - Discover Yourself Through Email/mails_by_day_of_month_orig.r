@@ -14,7 +14,7 @@ sent_count <- data.frame(table(elements))$Freq
 
 df <- data.frame(days=1:31,inbox=inbox_count,sent=sent_count)
 
-ggplot(data=df) + scale_shape_manual(name="Mailbox", value=c(2,3)) +
+ggplot(data=df) + scale_shape_manual(name="Mailbox", values=c(2,3)) +
   geom_point(aes(x=days,y=inbox, shape='inbox')) +
   geom_smooth(aes(x=days,y=inbox, shape='inbox')) +
   geom_point(aes(x=days,y=sent, shape='sent')) +
